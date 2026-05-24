@@ -1,0 +1,22 @@
+# Godot 4.x generated cache
+.godot/
+
+# Build output
+*.apk
+*.aab
+*.zip
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE
+.vs/
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Export presets (machine-specific)
+export_presets.cfg
