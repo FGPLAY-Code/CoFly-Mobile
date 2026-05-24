@@ -1,0 +1,40 @@
+[gd_resource type="Resource" script_class="AircraftConfig" format=3]
+
+[resource]
+script = Resource("res://scripts/flight/aircraft_config.gd")
+display_name = "Boeing 737-800 (示例)"
+description = "波音737-800 中短程窄体客机\n中小型客机飞控，适合中短途航线飞行"
+model_scene = null
+thumbnail = null
+mass = 41000.0
+max_fuel_mass = 15000.0
+wing_area = 125.0
+wing_span = 35.8
+aspect_ratio = 10.3
+max_lift_coeff = 1.6
+min_lift_coeff = -1.2
+lift_slope = 5.5
+stall_aoa = 16.0
+zero_lift_aoa = -2.0
+parasitic_drag = 0.024
+induced_drag_factor = 0.04
+oswald_efficiency = 0.8
+max_thrust = 27000.0
+thrust_response_time = 2.0
+max_flap_lift_increase = 0.55
+max_flap_drag_increase = 0.11
+flap_positions = 3
+has_gear = true
+gear_drag_coeff = 0.05
+pitch_moment_coeff = 0.8
+pitch_control_power = 1.0
+roll_control_power = 1.2
+yaw_control_power = 0.6
+yaw_damping = 0.8
+cruise_speed = 250.0
+max_speed = 280.0
+stall_speed = 55.0
+engine_type = 2
+dynamics_type = 1
+has_flaps = true
+has_autopilot = true

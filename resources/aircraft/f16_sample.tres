@@ -1,0 +1,40 @@
+[gd_resource type="Resource" script_class="AircraftConfig" format=3]
+
+[resource]
+script = Resource("res://scripts/flight/aircraft_config.gd")
+display_name = "F-16 Fighting Falcon (示例)"
+description = "通用动力 F-16 轻型战斗机\n战斗机飞控，高机动性，适合空战和特技飞行"
+model_scene = null
+thumbnail = null
+mass = 8900.0
+max_fuel_mass = 4000.0
+wing_area = 28.0
+wing_span = 9.96
+aspect_ratio = 3.5
+max_lift_coeff = 1.8
+min_lift_coeff = -1.5
+lift_slope = 6.0
+stall_aoa = 35.0
+zero_lift_aoa = -1.5
+parasitic_drag = 0.018
+induced_drag_factor = 0.06
+oswald_efficiency = 0.75
+max_thrust = 80000.0
+thrust_response_time = 0.8
+max_flap_lift_increase = 0.3
+max_flap_drag_increase = 0.05
+flap_positions = 2
+has_gear = true
+gear_drag_coeff = 0.03
+pitch_moment_coeff = 0.4
+pitch_control_power = 2.0
+roll_control_power = 3.0
+yaw_control_power = 1.0
+yaw_damping = 0.5
+cruise_speed = 300.0
+max_speed = 500.0
+stall_speed = 80.0
+engine_type = 1
+dynamics_type = 2
+has_flaps = false
+has_autopilot = false

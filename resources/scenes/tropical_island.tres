@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="SceneConfig" format=3]
+
+[resource]
+script = Resource("res://scripts/scene/scene_config.gd")
+scene_id = "tropical_island"
+display_name = "热带岛屿"
+description = "碧海蓝天的热带岛屿机场，适合悠闲观光飞行"
+scene_path = "res://scenes/flight_scene.tscn"
+sky_top_color = Color(0.2, 0.5, 0.85, 1)
+sky_horizon_color = Color(0.6, 0.8, 0.95, 1)
+sky_ground_color = Color(0.3, 0.5, 0.3, 1)
+sun_direction = Vector3(-0.5, -0.8, -0.3)
+sun_energy = 1.2
+ambient_energy = 0.6
+terrain_type = 0
+terrain_size = Vector2(4000, 4000)
+terrain_color = Color(0.2, 0.5, 0.2, 1)
+has_water = true
+water_color = Color(0.1, 0.35, 0.55, 1)
+water_level = 0.0
+start_position = Vector3(0, 50, 0)
+start_rotation = Vector3(0, 90, 0)
+start_airborne = false
+start_airspeed = 0.0
+time_of_day = 12.0
+fog_color = Color(0.6, 0.65, 0.7, 1)
+fog_density = 0.0005

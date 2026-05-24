@@ -41,11 +41,11 @@ func _process(delta: float) -> void:
 	if not is_instance_valid(plane):
 		return
 
-	# ---- 油门（平滑增减，0.5/s 速率） ----
+	# ---- 油门（平滑增减，1.0/s 速率） ----
 	if Input.is_action_pressed("throttle_up"):
-		plane.throttle = move_toward(plane.throttle, 1.0, delta * 0.5)
+		plane.throttle = move_toward(plane.throttle, 1.0, delta * 1.0)
 	if Input.is_action_pressed("throttle_down"):
-		plane.throttle = move_toward(plane.throttle, 0.0, delta * 0.5)
+		plane.throttle = move_toward(plane.throttle, 0.0, delta * 1.0)
 
 	# ---- 俯仰 ----
 	plane.pitch_input = 0.0

@@ -1,0 +1,102 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/ui/settings_menu.gd" id="1"]
+
+[node name="Settings" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+offset_bottom = -20.0
+
+[node name="Title" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+horizontal_alignment = 1
+text = "设置"
+
+[node name="ControlSettings" type="VBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ControlTitle" type="Label" parent="VBoxContainer/ControlSettings"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "操控设置"
+
+[node name="SensitivityHBox" type="HBoxContainer" parent="VBoxContainer/ControlSettings"]
+layout_mode = 2
+
+[node name="SensLabel" type="Label" parent="VBoxContainer/ControlSettings/SensitivityHBox"]
+layout_mode = 2
+text = "灵敏度"
+
+[node name="SensitivitySlider" type="HSlider" parent="VBoxContainer/ControlSettings/SensitivityHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+min_value = 0.5
+max_value = 2.0
+step = 0.1
+value = 1.0
+
+[node name="InvertPitchCheck" type="CheckBox" parent="VBoxContainer/ControlSettings"]
+layout_mode = 2
+text = "反转俯仰"
+
+[node name="GraphicsSettings" type="VBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="GraphicsTitle" type="Label" parent="VBoxContainer/GraphicsSettings"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "画质设置"
+
+[node name="QualityOption" type="OptionButton" parent="VBoxContainer/GraphicsSettings"]
+layout_mode = 2
+text = "画质预设"
+item_count = 3
+popup/item_0/text = "低"
+popup/item_0/id = 0
+popup/item_1/text = "中"
+popup/item_1/id = 1
+popup/item_2/text = "高"
+popup/item_2/id = 2
+selected = 1
+
+[node name="AudioSettings" type="VBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="AudioTitle" type="Label" parent="VBoxContainer/AudioSettings"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "音频设置"
+
+[node name="MasterHBox" type="HBoxContainer" parent="VBoxContainer/AudioSettings"]
+layout_mode = 2
+
+[node name="MasterLabel" type="Label" parent="VBoxContainer/AudioSettings/MasterHBox"]
+layout_mode = 2
+text = "总音量"
+
+[node name="MasterVolSlider" type="HSlider" parent="VBoxContainer/AudioSettings/MasterHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 1.0
+step = 0.05
+value = 0.8
+
+[node name="BackBtn" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+custom_minimum_size = Vector2(120, 48)
+text = "返回"

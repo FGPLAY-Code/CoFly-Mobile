@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://b8uy6ykhdif72"]
+
+[ext_resource type="Script" uid="uid://c0c36k2y6rk7s" path="res://scripts/flight/flight_model.gd" id="1_kcrrw"]
+[ext_resource type="PackedScene" uid="uid://dsjwgadb6gbk1" path="res://models/plane/MD-11.glb" id="1_mxhrs"]
+[ext_resource type="Resource" path="res://resources/aircraft/md_11.tres" id="2_hdbjy"]
+[ext_resource type="Script" uid="uid://7as7fytmqakf" path="res://scripts/input_handler.gd" id="4_hdbjy"]
+
+[sub_resource type="BoxShape3D" id="1"]
+size = Vector3(2000, 1, 2000)
+
+[sub_resource type="StandardMaterial3D" id="3"]
+albedo_color = Color(0.25, 0.35, 0.2, 1)
+
+[sub_resource type="BoxMesh" id="2"]
+size = Vector3(2000, 1, 2000)
+material = SubResource("3")
+
+[node name="Demo" type="Node3D" unique_id=513128014]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1780103133]
+transform = Transform3D(0.866025, 0.5, 0, -0.353553, 0.612372, 0.707107, 0.353553, -0.612372, 0.707107, 0, 0, 0)
+
+[node name="Ground" type="StaticBody3D" parent="." unique_id=10000001]
+position = Vector3(0, -0.5, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground" unique_id=10000002]
+shape = SubResource("1")
+
+[node name="GroundMesh" type="MeshInstance3D" parent="." unique_id=10000003]
+position = Vector3(0, -0.5, 0)
+mesh = SubResource("2")
+
+[node name="RigidBody3D" type="RigidBody3D" parent="." unique_id=1036201756]
+position = Vector3(0, 500, 0)
+rotation = Vector3(0, 3.14159, 0)
+script = ExtResource("1_kcrrw")
+config = ExtResource("2_hdbjy")
+start_airborne = true
+
+[node name="MD-11" parent="RigidBody3D" unique_id=337711556 instance=ExtResource("1_mxhrs")]
+
+[node name="Camera3D" type="Camera3D" parent="RigidBody3D" unique_id=1647494581]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, -0.8)
+current = true
+
+[node name="Node" type="Node" parent="RigidBody3D" unique_id=1617781679]
+script = ExtResource("4_hdbjy")

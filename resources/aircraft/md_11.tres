@@ -1,0 +1,40 @@
+[gd_resource type="Resource" script_class="AircraftConfig" format=3]
+
+[resource]
+script = Resource("res://scripts/flight/aircraft_config.gd")
+display_name = "MD-11"
+description = "McDonnell Douglas MD-11 三发远程宽体客机\n大型喷气式客机，适合长途航线飞行"
+model_scene = null
+thumbnail = null
+mass = 130000.0
+max_fuel_mass = 45000.0
+wing_area = 338.9
+wing_span = 51.66
+aspect_ratio = 7.88
+max_lift_coeff = 1.65
+min_lift_coeff = -1.2
+lift_slope = 5.5
+stall_aoa = 16.0
+zero_lift_aoa = -2.5
+parasitic_drag = 0.022
+induced_drag_factor = 0.04
+oswald_efficiency = 0.78
+max_thrust = 800000.0
+thrust_response_time = 3.0
+max_flap_lift_increase = 0.6
+max_flap_drag_increase = 0.12
+flap_positions = 3
+has_gear = true
+gear_drag_coeff = 0.06
+pitch_moment_coeff = 0.85
+pitch_control_power = 1.0
+roll_control_power = 1.1
+yaw_control_power = 0.5
+yaw_damping = 0.85
+cruise_speed = 270.0
+max_speed = 300.0
+stall_speed = 65.0
+engine_type = 2
+dynamics_type = 0
+has_flaps = true
+has_autopilot = true
