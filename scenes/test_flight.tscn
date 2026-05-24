@@ -1,0 +1,60 @@
+[gd_scene load_steps=9 format=3 uid="uid://c6dn6obcc72gj"]
+
+[ext_resource type="Script" path="res://scripts/simple_flight.gd" id="1_cfjg5"]
+[ext_resource type="Script" path="res://scripts/input_handler.gd" id="2_rfn2p"]
+[ext_resource type="PackedScene" uid="uid://dsjwgadb6gbk1" path="res://models/plane/MD-11.glb" id="3_nmd1t"]
+[ext_resource type="Script" path="res://scripts/tail_camera.gd" id="4_bhj8w"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ykq0m"]
+sky_top_color = Color(0.176471, 0.354902, 0.839216, 1)
+sky_horizon_color = Color(0.647059, 0.815686, 1, 1)
+ground_bottom_color = Color(0.160784, 0.160784, 0.160784, 1)
+ground_horizon_color = Color(0.254902, 0.254902, 0.254902, 1)
+
+[sub_resource type="Sky" id="Sky_2dpg8"]
+sky_material = SubResource("ProceduralSkyMaterial_ykq0m")
+
+[sub_resource type="Environment" id="Environment_lvo4m"]
+background_mode = 1
+background_sky = SubResource("Sky_2dpg8")
+ambient_light_source = 2
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_uj67w"]
+size = Vector3(2000, 1, 2000)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vq3u3"]
+size = Vector3(26, 5.5, 22)
+
+[node name="CoFly" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_lvo4m")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.866025, 0.5, 0, -0.353553, 0.612372, 0.707107, 0.353553, -0.612372, 0.707107, 0, 0, 0)
+
+[node name="Ground" type="StaticBody3D" parent="."]
+position = Vector3(0, -0.5, 0)
+
+[node name="Ground/CollisionShape3D" type="CollisionShape3D" parent="Ground"]
+shape = SubResource("BoxShape3D_uj67w")
+
+[node name="Plane" type="RigidBody3D" parent="."]
+position = Vector3(0, 10, 0)
+script = ExtResource("1_cfjg5")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Plane"]
+position = Vector3(0, 2.75, 0)
+shape = SubResource("BoxShape3D_vq3u3")
+
+[node name="MD11" type="Node3D" parent="Plane"]
+rotation = Vector3(0, 3.14159, 0)
+instance = ExtResource("3_nmd1t")
+
+[node name="InputHandler" type="Node" parent="Plane"]
+script = ExtResource("2_rfn2p")
+
+[node name="Camera3D" type="Camera3D" parent="Plane"]
+position = Vector3(0, 5, 18)
+rotation = Vector3(0, 3.14159, 0)
+script = ExtResource("4_bhj8w")

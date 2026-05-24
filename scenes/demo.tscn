@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://dsmwboshv3qow"]
+
+[ext_resource type="Script" uid="uid://dmawqawa5g47h" path="res://scripts/simple_flight.gd" id="1_0trk7"]
+[ext_resource type="Script" uid="uid://7as7fytmqakf" path="res://scripts/input_handler.gd" id="2_kl6e3"]
+[ext_resource type="PackedScene" uid="uid://dsjwgadb6gbk1" path="res://models/plane/MD-11.glb" id="3_m7r2n"]
+[ext_resource type="Script" uid="uid://cxln22r2o4036" path="res://scripts/tail_camera.gd" id="4_evw6d"]
+
+[node name="CoFly" type="Node3D" unique_id=1661053111]
+
+[node name="MD-11" parent="." unique_id=1711541104 instance=ExtResource("3_m7r2n")]
+
+[node name="RigidBody3D" type="RigidBody3D" parent="MD-11" unique_id=1107120294]
+script = ExtResource("1_0trk7")
+
+[node name="Node" type="Node" parent="MD-11" unique_id=283488228]
+script = ExtResource("2_kl6e3")
+
+[node name="Camera3D" type="Camera3D" parent="MD-11" unique_id=676433840]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0.3, -1)
+script = ExtResource("4_evw6d")
